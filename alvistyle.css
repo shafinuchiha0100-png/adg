@@ -1,0 +1,40 @@
+body{
+background: #2A7B9B;
+background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(83, 207, 87, 1) 50%, rgba(83, 227, 237, 1) 100%);
+}
+.photo2{
+    height: 200px;
+    width: 200px;
+    display: flex;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shafin{
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+.shafin2{
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+.adg{
+    text-align: center;
+    color: rgb(1, 41, 41);
+}
+.button{
+    display: flex;
+    justify-content: center;
+}
+.main{
+    color: black;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
+}

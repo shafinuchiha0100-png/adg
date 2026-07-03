@@ -1,0 +1,101 @@
+/* 1. Global Styles & Reset */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+}
+
+body {
+    background: linear-gradient(135deg, #51c9bf 0%, #e2d1c3 100%); 
+    min-height: 100vh;
+    /* Reduced top/bottom padding for mobile */
+    padding: 20px 10px; 
+    color: #2d3436;
+}
+
+.container { 
+    /* Changed max-width to a percentage to ensure it never overflows */
+    width: 100%;
+    max-width: 1100px; 
+    margin: 0 auto; 
+    text-align: center; 
+}
+
+h1 { 
+    margin-bottom: 30px; 
+    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Text scales with screen size */
+    font-weight: 700; 
+    letter-spacing: -1px;
+}
+
+/* 2. Responsive Grid */
+.team-grid {
+    display: grid;
+    /* Reduced minmax to 250px so cards fit better on narrow phones */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
+    width: 100%;
+}
+
+/* 3. Modern Card Design */
+.member-link { 
+    text-decoration: none; 
+    color: inherit; 
+    display: block;
+}
+
+.member-card {
+    background: rgba(255, 255, 255, 0.6); 
+    backdrop-filter: blur(12px); 
+    border-radius: 24px;
+    padding: 30px 15px; /* Slightly tighter padding for mobile */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* Prevents the card from being wider than the screen */
+    max-width: 100%; 
+}
+
+.member-card:hover {
+    transform: translateY(-9px);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Updated active state for 2025: mobile-friendly tap effect */
+.member-card:active {
+    transform: scale(0.95);
+    background: rgba(116, 108, 187, 0.9);
+}
+
+.member-img {
+    width: 120px; 
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    object-fit: cover;
+    border: 5px solid rgb(255, 255, 255);
+    display: block; /* Ensures centering */
+}
+
+.member-name { 
+    font-size: 1.4rem; 
+    font-weight: 600; 
+    margin-bottom: 8px; 
+}
+
+.member-role { 
+    color: #636e72; 
+    font-weight: 500; 
+    font-size: 0.8rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+}
+
+/* 4. Extra Fix for Small Phones */
+@media (max-width: 350px) {
+    .team-grid {
+        /* On extremely small phones, reduce minmax to avoid horizontal scrolling */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
